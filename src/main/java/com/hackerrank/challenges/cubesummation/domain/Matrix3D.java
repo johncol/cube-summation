@@ -2,23 +2,23 @@ package com.hackerrank.challenges.cubesummation.domain;
 
 public class Matrix3D {
 
-    private final int[][][] matrix;
+    private final long[][][] matrix;
     private final int size;
 
     public Matrix3D(int size) {
         if (size < 1) {
             throw new IllegalArgumentException("Matrix size must be at least 1");
         }
-        this.matrix = new int[size][size][size];
+        this.matrix = new long[size][size][size];
         this.size = size;
     }
 
-    public void update(Coordinate3D coordinate, int value) {
+    public void update(Coordinate3D coordinate, long value) {
         validateCoordinate(coordinate);
         matrix[coordinate.getX() - 1][coordinate.getY() - 1][coordinate.getZ() - 1] = value;
     }
 
-    public int get(Coordinate3D coordinate) {
+    public long get(Coordinate3D coordinate) {
         validateCoordinate(coordinate);
         return matrix[coordinate.getX() - 1][coordinate.getY() - 1][coordinate.getZ() - 1];
     }

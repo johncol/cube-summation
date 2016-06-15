@@ -10,11 +10,19 @@ import java.util.Optional;
 public class UpdateQuery implements Query<Void> {
 
     private final Coordinate3D coordinate;
-    private final int value;
+    private final long value;
 
-    public UpdateQuery(Coordinate3D coordinate, int value) {
+    public UpdateQuery(Coordinate3D coordinate, long value) {
         this.coordinate = coordinate;
         this.value = value;
+    }
+
+    public Coordinate3D getCoordinate() {
+        return coordinate;
+    }
+
+    public long getValue() {
+        return value;
     }
 
     @Override
@@ -37,7 +45,7 @@ public class UpdateQuery implements Query<Void> {
 
     @Override
     public int hashCode() {
-        return coordinate.hashCode() * 7 + value * 13;
+        return coordinate.hashCode() * 7 + (int) value * 13;
     }
 
     @Override

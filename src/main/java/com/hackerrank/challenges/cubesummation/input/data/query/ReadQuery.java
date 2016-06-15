@@ -17,6 +17,14 @@ public class ReadQuery implements Query<Integer> {
         this.end = end;
     }
 
+    public Coordinate3D getEnd() {
+        return end;
+    }
+
+    public Coordinate3D getStart() {
+        return start;
+    }
+
     @Override
     public Optional<Integer> execute(Matrix3D matrix) {
         Coordinate3D coordinate = start.clone();

@@ -17,6 +17,10 @@ public class InputData {
         return testCases;
     }
 
+    public int getNumberOfTestCases() {
+        return testCases.size();
+    }
+
     public static class Builder {
 
         private List<TestCase> testCases = new ArrayList<>();

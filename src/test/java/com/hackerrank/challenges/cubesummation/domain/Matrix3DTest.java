@@ -19,7 +19,7 @@ public class Matrix3DTest {
             for (int y = 1; y <= size; y++) {
                 for (int z = 1; z <= size; z++) {
                     Coordinate3D coordinate = new Coordinate3D(x, y, z);
-                    assertThat(matrix.get(coordinate), is(equalTo(0)));
+                    assertThat(matrix.get(coordinate), is(equalTo(0L)));
                 }
             }
         }
@@ -30,8 +30,8 @@ public class Matrix3DTest {
         Matrix3D matrix = new Matrix3D(3);
         Coordinate3D coordinate = new Coordinate3D(1, 2, 3);
 
-        assertThat(matrix.get(coordinate), is(equalTo(0)));
-        int newValue = 33;
+        assertThat(matrix.get(coordinate), is(equalTo(0L)));
+        long newValue = 33;
         matrix.update(coordinate, newValue);
         assertThat(matrix.get(coordinate), is(equalTo(newValue)));
     }

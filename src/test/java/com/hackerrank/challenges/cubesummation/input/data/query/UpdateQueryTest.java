@@ -19,7 +19,7 @@ public class UpdateQueryTest {
     public void shouldExecuteUpdate() {
         Matrix3D matrix = new Matrix3D(5);
         Coordinate3D coordinate = new Coordinate3D(2, 2, 2);
-        int value = 4;
+        long value = 4;
 
         Query updateQuery = new UpdateQuery(coordinate, value);
         Optional<Void> result = updateQuery.execute(matrix);

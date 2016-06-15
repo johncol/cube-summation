@@ -58,7 +58,7 @@ public class StandardParser implements InputParser<List<String>> {
     private Query parseUpdateQuery(String line) throws ParseException {
         String[] queryPart = line.split(SEPARATOR);
         Coordinate3D coordinate = new Coordinate3D(intValueOf(queryPart[1]), intValueOf(queryPart[2]), intValueOf(queryPart[3]));
-        int value = intValueOf(queryPart[4]);
+        long value = longValueOf(queryPart[4]);
         return new UpdateQuery(coordinate, value);
     }
 
@@ -71,6 +71,10 @@ public class StandardParser implements InputParser<List<String>> {
 
     private int intValueOf(String input) throws ParseException {
         return formatter.parse(input).intValue();
+    }
+
+    private long longValueOf(String input) throws ParseException {
+        return formatter.parse(input).longValue();
     }
 
 }

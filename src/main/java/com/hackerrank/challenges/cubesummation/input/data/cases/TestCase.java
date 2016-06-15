@@ -23,6 +23,10 @@ public class TestCase {
         return queries;
     }
 
+    public int getNumberOfQueries() {
+        return queries.size();
+    }
+
     public static class Builder {
 
         private int matrixSize;
